@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"jvmgo/ch02/classpath"
+	"jvmgo/ch03/classpath"
 	"strings"
 )
 
@@ -27,4 +27,5 @@ func startJVM(cmd *Cmd)  {
 		return
 	}
 	fmt.Printf("class data:%v\n",classData)
+
 }
