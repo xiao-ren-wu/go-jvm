@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b83811ba-daea-42cf-b124-507328694fbf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch02/cmd.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch02/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/classfile/class_reader.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/classpath/classpath.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/classpath/cmd.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/classpath/entry.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/classpath/entry_composite.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/classpath/entry_dir.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/classpath/entry_wildcard.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/classpath/entry_zip.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/cmd.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/classfile/class_file.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch01/cmd.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch01/cmd.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch01/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch01/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch02/classpath/entry_composite.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch02/classpath/entry_composite.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch02/classpath/entry_zip.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch02/classpath/entry_zip.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,21 +14,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/cmd.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-              <folding>
-                <element signature="e#14#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
+            <state relative-caret-position="29">
               <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="e#14#66#0" expanded="true" />
@@ -53,10 +26,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/classfile/class_reader.go">
+        <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/classfile/class_file.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="610">
-              <caret line="45" column="7" lean-forward="true" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+              <caret line="81" column="44" selection-start-line="81" selection-start-column="44" selection-end-line="81" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/classfile/class_reader.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -69,7 +51,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/classpath/entry.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="58">
               <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="e#19#46#0" expanded="true" />
@@ -81,7 +63,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/classpath/entry_composite.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="58">
               <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="e#19#50#0" expanded="true" />
@@ -93,7 +75,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/classpath/entry_dir.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="58">
               <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="e#19#59#0" expanded="true" />
@@ -105,7 +87,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/classpath/entry_wildcard.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="58">
               <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="e#19#63#0" expanded="true" />
@@ -117,7 +99,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/classpath/entry_zip.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="58">
               <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="e#19#84#0" expanded="true" />
@@ -155,6 +137,7 @@
         <option value="$PROJECT_DIR$/src/jvmgo/ch01/main.go" />
         <option value="$PROJECT_DIR$/src/jvmgo/ch03/main.go" />
         <option value="$PROJECT_DIR$/src/jvmgo/ch03/classfile/class_reader.go" />
+        <option value="$PROJECT_DIR$/src/jvmgo/ch03/classfile/class_file.go" />
       </list>
     </option>
   </component>
@@ -288,7 +271,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17963752" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18123667" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -454,12 +437,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/cmd.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#14#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/classpath/cmd.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/classpath/entry.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="58">
           <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="e#19#46#0" expanded="true" />
@@ -469,7 +462,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/classpath/entry_composite.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="58">
           <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="e#19#50#0" expanded="true" />
@@ -479,7 +472,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/classpath/entry_dir.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="58">
           <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="e#19#59#0" expanded="true" />
@@ -489,7 +482,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/classpath/entry_wildcard.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="58">
           <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="e#19#63#0" expanded="true" />
@@ -499,7 +492,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/classpath/entry_zip.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="58">
           <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="e#19#84#0" expanded="true" />
@@ -507,9 +500,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Go/src/builtin/builtin.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="243" column="5" selection-start-line="243" selection-start-column="5" selection-end-line="243" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
+        <state relative-caret-position="29">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="e#14#66#0" expanded="true" />
@@ -517,27 +517,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/cmd.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="e#14#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Go/src/builtin/builtin.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="188" column="5" selection-start-line="188" selection-start-column="5" selection-end-line="188" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/classfile/class_reader.go">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jvmgo/ch03/classfile/class_file.go">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="610">
-          <caret line="45" column="7" lean-forward="true" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+          <caret line="81" column="44" selection-start-line="81" selection-start-column="44" selection-end-line="81" selection-end-column="44" />
         </state>
       </provider>
     </entry>
