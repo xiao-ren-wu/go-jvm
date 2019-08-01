@@ -99,6 +99,7 @@ type ConstantNameAndTypeInfo struct {
 	descriptorIndex	uint16
 }
 
+
 func (self *ConstantIntegerInfo) readInfo(reader *ClassReader) {
 	bytes := reader.readUnit32()
 	self.val = int32(bytes)
