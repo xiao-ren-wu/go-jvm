@@ -18,22 +18,22 @@ func (self ConstantInvokeDynamicInfo) NameAndType() (string, string) {
 }
 
 // todo
-func (self ConstantInvokeDynamicInfo) BootstrapMethodInfo() (uint16, []uint16) {
-	bmAttr := self.cp.cf.BootstrapMethodsAttribute()
-	bm := bmAttr.bootstrapMethods[self.bootstrapMethodAttrIndex]
-
-	return bm.bootstrapMethodRef, bm.bootstrapArguments
-}
-
-func readConstantInvokeDynamicInfo(reader *ClassReader,
-	cp *ConstantPool) ConstantInvokeDynamicInfo {
-
-	return ConstantInvokeDynamicInfo{
-		cp:                       cp,
-		bootstrapMethodAttrIndex: reader.readUint16(),
-		nameAndTypeIndex:         reader.readUint16(),
-	}
-}
+//func (self ConstantInvokeDynamicInfo) BootstrapMethodInfo() (uint16, []uint16) {
+//	bmAttr := self.cp.cf.BootstrapMethodsAttribute()
+//	bm := bmAttr.bootstrapMethods[self.bootstrapMethodAttrIndex]
+//
+//	return bm.bootstrapMethodRef, bm.bootstrapArguments
+//}
+//
+//func readConstantInvokeDynamicInfo(reader *ClassReader,
+//	cp *ConstantPool) ConstantInvokeDynamicInfo {
+//
+//	return ConstantInvokeDynamicInfo{
+//		cp:                       cp,
+//		bootstrapMethodAttrIndex: reader.readUint16(),
+//		nameAndTypeIndex:         reader.readUint16(),
+//	}
+//}
 
 /*
 CONSTANT_MethodHandle_info {

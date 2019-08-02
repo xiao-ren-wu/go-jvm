@@ -4,8 +4,8 @@ package classfile
 	Code_attribute{
 		u2	attribute_name_index;
 		u4	attribute_length;
-		u2	max_stack;
-		u2	max_locals;
+		u2	max_stack;	//最大栈深度
+		u2	max_locals; //局部变量表大小
 		u4	code_length;
 		u1	code[code_length];
 		u2	exception_table_length;

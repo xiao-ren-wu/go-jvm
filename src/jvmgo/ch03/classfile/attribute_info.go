@@ -33,7 +33,7 @@ func readAttribute(reader *ClassReader, cp ConstantPool) AttributeInfo {
 	return attrInfo
 }
 
-func newAttributeInfo(attrName string, attrLen uint32, pool ConstantPool) AttributeInfo {
+func newAttributeInfo(attrName string, attrLen uint32, cp ConstantPool) AttributeInfo {
 	switch attrName {
 	case "Code":
 		return &CodeAttribute{cp: cp}
@@ -45,12 +45,12 @@ func newAttributeInfo(attrName string, attrLen uint32, pool ConstantPool) Attrib
 		return &ExceptionsAttribute{}
 	case "LineNumberTable":
 		return &LineNumberTableAttribute{}
-	case "LocalVariableTable":
-		return &LocalVariableTableAttribute{}
-	case "SourceFile":
-		return &SourceFileAttribute{cp: cp}
-	case "Synthetic":
-		return &SyncheticAttribute{}
+	//case "LocalVariableTable":
+	//	return &LocalVariableTableAttribute{}
+	//case "SourceFile":
+	//	return &SourceFileAttribute{cp: cp}
+	//case "Synthetic":
+	//	return &SyncheticAttribute{}
 	default:
 		return &UnparsedAttribute{attrName, attrLen, nil}
 	}
