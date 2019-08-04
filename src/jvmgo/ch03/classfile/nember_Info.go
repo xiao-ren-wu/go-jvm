@@ -15,7 +15,7 @@ type MemberInfo struct {
 	读取字段表或者方法表
  */
 func readMembers(reader *ClassReader, cp ConstantPool) []*MemberInfo {
-	memberCount:=reader.readUnit16()
+	memberCount:=reader.readUint16()
 	members:=make([]*MemberInfo,memberCount)
 	for i:=range members{
 		members[i]=readMember(reader,cp)
@@ -29,9 +29,9 @@ func readMembers(reader *ClassReader, cp ConstantPool) []*MemberInfo {
 func readMember(reader *ClassReader, cp ConstantPool) *MemberInfo {
 	return &MemberInfo{
 		cp:					cp,
-		accessFlags:		reader.readUnit16(),
-		nameIndex: 			reader.readUnit16(),
-		descriptorIndex: 	reader.readUnit16(),
+		accessFlags:		reader.readUint16(),
+		nameIndex: 			reader.readUint16(),
+		descriptorIndex: 	reader.readUint16(),
 		attributes:			readAttributes(reader,cp),
 	}
 }

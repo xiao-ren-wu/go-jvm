@@ -13,7 +13,7 @@ type SourceFileAttribute struct {
 }
 
 func (self *SourceFileAttribute) readInfo(reader *ClassReader) {
-	self.sourceFileIndex = reader.readUnit16()
+	self.sourceFileIndex = reader.readUint16()
 }
 
 func (self *SourceFileAttribute) FileName() string {

@@ -13,27 +13,23 @@ type ConstantInvokeDynamicInfo struct {
 	nameAndTypeIndex         uint16
 }
 
-func (self ConstantInvokeDynamicInfo) NameAndType() (string, string) {
+func (self *ConstantInvokeDynamicInfo) readInfo(reader *ClassReader) {
+	self.bootstrapMethodAttrIndex = reader.readUint16()
+	self.nameAndTypeIndex = reader.readUint16()
+}
+
+func (self *ConstantInvokeDynamicInfo) NameAndType() (string, string) {
 	return self.cp.getNameAndType(self.nameAndTypeIndex)
 }
 
 // todo
-//func (self ConstantInvokeDynamicInfo) BootstrapMethodInfo() (uint16, []uint16) {
-//	bmAttr := self.cp.cf.BootstrapMethodsAttribute()
-//	bm := bmAttr.bootstrapMethods[self.bootstrapMethodAttrIndex]
-//
-//	return bm.bootstrapMethodRef, bm.bootstrapArguments
-//}
-//
-//func readConstantInvokeDynamicInfo(reader *ClassReader,
-//	cp *ConstantPool) ConstantInvokeDynamicInfo {
-//
-//	return ConstantInvokeDynamicInfo{
-//		cp:                       cp,
-//		bootstrapMethodAttrIndex: reader.readUint16(),
-//		nameAndTypeIndex:         reader.readUint16(),
-//	}
-//}
+func (self *ConstantInvokeDynamicInfo) BootstrapMethodInfo() (uint16, []uint16) {
+	//bmAttr := self.cp.cf.BootstrapMethodsAttribute()
+	//bm := bmAttr.bootstrapMethods[self.bootstrapMethodAttrIndex]
+	//
+	//return bm.bootstrapMethodRef, bm.bootstrapArguments
+	return 0, nil
+}
 
 /*
 CONSTANT_MethodHandle_info {
@@ -43,15 +39,19 @@ CONSTANT_MethodHandle_info {
 }
 */
 type ConstantMethodHandleInfo struct {
-	ReferenceKind  uint8
-	ReferenceIndex uint16
+	referenceKind  uint8
+	referenceIndex uint16
 }
 
-func readConstantMethodHandleInfo(reader *ClassReader) ConstantMethodHandleInfo {
-	return ConstantMethodHandleInfo{
-		ReferenceKind:  reader.readUnit8(),
-		ReferenceIndex: reader.readUnit16(),
-	}
+func (self *ConstantMethodHandleInfo) readInfo(reader *ClassReader) {
+	self.referenceKind = reader.readUint8()
+	self.referenceIndex = reader.readUint16()
+}
+func (self *ConstantMethodHandleInfo) ReferenceKind() uint8 {
+	return self.referenceKind
+}
+func (self *ConstantMethodHandleInfo) ReferenceIndex() uint16 {
+	return self.referenceIndex
 }
 
 /*
@@ -64,8 +64,6 @@ type ConstantMethodTypeInfo struct {
 	descriptorIndex uint16
 }
 
-func readConstantMethodTypeInfo(reader *ClassReader) ConstantMethodTypeInfo {
-	return ConstantMethodTypeInfo{
-		descriptorIndex: reader.readUnit16(),
-	}
+func (self *ConstantMethodTypeInfo) readInfo(reader *ClassReader) {
+	self.descriptorIndex = reader.readUint16()
 }

@@ -1,7 +1,26 @@
 package classfile
 
 import "fmt"
-
+/*
+ClassFile {
+    u4             magic;
+    u2             minor_version;
+    u2             major_version;
+    u2             constant_pool_count;
+    cp_info        constant_pool[constant_pool_count-1];
+    u2             access_flags;
+    u2             this_class;
+    u2             super_class;
+    u2             interfaces_count;
+    u2             interfaces[interfaces_count];
+    u2             fields_count;
+    field_info     fields[fields_count];
+    u2             methods_count;
+    method_info    methods[methods_count];
+    u2             attributes_count;
+    attribute_info attributes[attributes_count];
+}
+*/
 type ClassFile struct {
 	//magic	uint32
 	minorVersion uint16
@@ -38,10 +57,10 @@ func (self *ClassFile) read(reader *ClassReader) {
 	self.readAndCheckMagic(reader)
 	self.readAndCheckVersion(reader)
 	self.constantPool = readConstantPool(reader)
-	self.accessFlags = reader.readUnit16()
-	self.thisClass = reader.readUnit16()
-	self.superClass = reader.readUnit16()
-	self.interfaces = reader.readUnit16s()
+	self.accessFlags = reader.readUint16()
+	self.thisClass = reader.readUint16()
+	self.superClass = reader.readUint16()
+	self.interfaces = reader.readUint16s()
 	self.fields = readMembers(reader, self.constantPool)
 	self.methods = readMembers(reader, self.constantPool)
 	self.attributes = readAttributes(reader, self.constantPool)
@@ -51,7 +70,7 @@ func (self *ClassFile) read(reader *ClassReader) {
 魔数检查
 */
 func (self *ClassFile) readAndCheckMagic(reader *ClassReader) {
-	magic := reader.readUnit32()
+	magic := reader.readUint32()
 	if magic != 0xCAFEBABE {
 		panic("java.lang.ClassFormatError:magic!")
 	}
@@ -63,8 +82,8 @@ func (self *ClassFile) readAndCheckMagic(reader *ClassReader) {
 	1.2之后，没用过次版本号每次发布都是主版本号+1
 */
 func (self *ClassFile) readAndCheckVersion(reader *ClassReader) {
-	self.minorVersion = reader.readUnit16()
-	self.majorVersion = reader.readUnit16()
+	self.minorVersion = reader.readUint16()
+	self.majorVersion = reader.readUint16()
 	switch self.majorVersion {
 	case 45:
 		return

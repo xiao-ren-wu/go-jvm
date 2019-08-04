@@ -1,9 +1,35 @@
 # go-jvm
-:milky_way: Implementation of Java Virtual Machine through go Language
+**:milky_way: Implementation of Java Virtual Machine through go Language**
 
 ### class字节码
+
+#### ClassFile结构
+
+~~~c
+ClassFile{
+	u4					magic;									//魔数
+	u2					minor_version;							//次版本号
+	u2 					major_version;							//主版本号
+	u2					constant_pool_count;					//常量池计数器
+	cp_info				constant_pool[constant_pool_count-1]	//常量池
+	u2					access_flags;							//访问标志
+	u2					this_class;								//类索引
+	u2					super_class;							//父类索引
+	u2					interfaces_count;						//接口计数器
+	u2					interfaces[interfaces_count];			//接口表
+	u2					fields_count;							//字段计数器
+	field_info			fields[fields_count];					//字段表
+	u2					methods_count;							//方法计数器
+	method_info			methods[methods_count];					//方法表
+	u2					attributes_count;						//属性计数器
+	attribute_info		attributes[attributes_count];			//属性表
+}
+~~~
+
+> 1. 为了描述class文件，Java虚拟机定义了u1,u2,u4三种数据类型来表示1,2,4字节无符号整数，分别对应Go语言中的uint8,uint16和uint32
+
 1. 魔数  
-    class字节码的魔数是："0xCAFEBABY"
+    class字节码的魔数是：`0xCAFEBABY`                 : - ) 这可能就是为啥Java是个咖啡杯的原因了~
 2. 版本号  
     魔数之后是class文件的次版本号和主版本号，如果某class字节码文件的主版本号是M，次版本号是m,那么完整的版本号可以表示成“M.m”,次版本号只有在Java1.2之前才用过，之后都是0，每次新版本发布都会在主版本号上加1。
 3. 常量池
@@ -32,23 +58,26 @@
       >  可以把常量池中的常量分成两类：字面量和符号引用，字面量包括数字和字符串常量，符号引用包括类和接口名字段和方法信息等。除了字面量其他常量都是通过索引直接或者间接指向`CONSTANT_Utf8_info`常量。
 
 
+
 4. 访问类标志
 
   一个16位的`bitmask`指出class文件定义的是类还是接口，访问级别是`public`还是`private`等等
 
 5. 类和超类索引
 
-访问类标志之后是两个u2类型的常量池索引，分别给出类名和超类。class文件存储的类名类似完全限定名，但是把点换成了斜线，Java语言规范把这种名字叫做：二进制名，因为每个类都有名字，所以thisClass必须是有效的常量池索引。除了java.lang.Object之外，其他类都有超类，所以superClass只有在Object.class中是0，在其他的class文件中必须是有效的常量池索引。
-
+   1. 访问类标志之后是两个u2类型的常量池索引，分别给出类名和超类。
+   2. class文件存储的类名类似完全限定名，但是把点换成了斜线，Java语言规范把这种名字叫做：二进制名
+   3. 因为每个类都有名字，所以thisClass必须是有效的常量池索引。
+   4. 除了java.lang.Object之外，其他类都有超类，所以superClass只有在Object.class中是0，在其他的class文件中必须是有效的常量池索引。
 6. 接口索引表
 
-类和超类之后是接口索引表，表中存放的是常量池的索引，给出该类实现的所有接口的名字。classFileTest没有实现接口。
+类和超类之后是接口索引表，表中存放的是常量池的索引，给出该类实现的所有接口的名字。
 
 7. 字段和方法表
 
 接口索引表之后是字段表和方法表，分别存储字段和方法信息，字段和方法的基本结构大致相同，仅差别于属性表。
 
-~~~
+~~~c
 file_info{
 	u2		access_flags;
 	u2		name_index;

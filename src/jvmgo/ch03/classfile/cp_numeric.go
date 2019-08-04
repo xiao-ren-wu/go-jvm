@@ -99,27 +99,26 @@ type ConstantNameAndTypeInfo struct {
 	descriptorIndex	uint16
 }
 
-
 func (self *ConstantIntegerInfo) readInfo(reader *ClassReader) {
-	bytes := reader.readUnit32()
+	bytes := reader.readUint32()
 	self.val = int32(bytes)
 }
 
 func (self *ConstantFloatInfo) readInfo(reader *ClassReader) {
-	bytes := reader.readUnit32()
+	bytes := reader.readUint32()
 	self.val = math.Float32frombits(bytes)
 }
 
 func (self *ConstantLongInfo) readInfo(reader *ClassReader) {
-	bytes := reader.readUnit64()
+	bytes := reader.readUint64()
 	self.val = int64(bytes)
 }
 func (self *ConstantDoubleInfo) readInfo(reader *ClassReader) {
-	bytes := reader.readUnit64()
+	bytes := reader.readUint64()
 	self.val = math.Float64frombits(bytes)
 }
 func (self *ConstantUtf8Info) readInfo(reader *ClassReader) {
-	length := uint32(reader.readUnit16())
+	length := uint32(reader.readUint16())
 	bytes := reader.readBytes(length)
 	self.str = decodeMTF8(bytes)
 }
@@ -127,18 +126,18 @@ func decodeMTF8(bytes []byte) string {
 	return string(bytes)
 }
 func (self *ConstantStringInfo) readInfo(reader *ClassReader) {
-	self.stringIndex = reader.readUnit16()
-}
-func (self *ConstantStringInfo) String() string {
-	return self.cp.getUtf8(self.stringIndex)
+	self.stringIndex = reader.readUint16()
 }
 func (self *ConstantClassInfo) readInfo(reader *ClassReader) {
-	self.nameIndex=reader.readUnit16()
+	self.nameIndex=reader.readUint16()
+}
+func (self *ConstantNameAndTypeInfo) readInfo(reader *ClassReader) {
+	self.nameIndex=reader.readUint16()
+	self.descriptorIndex = reader.readUint16()
 }
 func (self *ConstantClassInfo) Name() string {
 	return self.cp.getUtf8(self.nameIndex)
 }
-func (self *ConstantNameAndTypeInfo) readInfo(reader *ClassReader) {
-	self.nameIndex=reader.readUnit16()
-	self.descriptorIndex = reader.readUnit16()
+func (self *ConstantStringInfo) String() string {
+	return self.cp.getUtf8(self.stringIndex)
 }
