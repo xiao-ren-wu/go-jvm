@@ -90,6 +90,8 @@ file_info{
 和类一样，方法也有自己的访问标志，访问标志之后是一个常量池索引，给出字段名或者方法名，然后又是一个常量池索引，给出字段或者方法的描述符，最后是属性表。
 
 ### 运行时数据区
+java 运行时数据类型和Go数据类型对应如下
+[](https://github.com/xiao-ren-wu/go-jvm/blob/master/images/data_type.png)
 
 Java虚拟机规范对Java虚拟机栈约束相当宽松，
 
