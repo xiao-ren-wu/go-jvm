@@ -91,7 +91,8 @@ file_info{
 
 ### 运行时数据区
 java 运行时数据类型和Go数据类型对应如下
-[](https://github.com/xiao-ren-wu/go-jvm/blob/master/images/data_type.png)
+
+![data_type](https://github.com/xiao-ren-wu/go-jvm/blob/master/images/data_type.png)
 
 Java虚拟机规范对Java虚拟机栈约束相当宽松，
 
