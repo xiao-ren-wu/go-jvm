@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"jvmgo/ch03/classfile"
 	"jvmgo/ch03/classpath"
+	"jvmgo/ch03/rtda"
 	"strings"
 )
 
@@ -16,8 +17,8 @@ func main() {
 	//	//}else{
 	//	//	startJVM(cmd)
 	//	//}
-	cmd := &Cmd{XjreOption: "C:\\Program Files\\Java\\jre1.8.0_191", class: "java.lang.String"}
-	startJVM(cmd)
+	//cmd := &Cmd{XjreOption: "C:\\Program Files\\Java\\jre1.8.0_191", class: "java.lang.String"}
+	startJVM()
 }
 
 func startJVM1(cmd *Cmd) {
@@ -32,7 +33,7 @@ func startJVM1(cmd *Cmd) {
 	fmt.Printf("class data:%v\n", classData)
 }
 
-func startJVM(cmd *Cmd) {
+func startJVM2(cmd *Cmd) {
 	cp := classpath.Parse(cmd.XjreOption, cmd.cpOption)
 	className := strings.Replace(cmd.class, ".", "/", -1)
 	cf := loadClass(className, cp)
@@ -68,3 +69,71 @@ func printClassInfo(cf *classfile.ClassFile) {
 		fmt.Printf(" %s\n", m.Name())
 	}
 }
+
+func startJVM(){
+	frame :=rtda.NewFrame(100,100)
+	testLocalVars(frame.LocalVars())
+	testOperandStack(frame.OperandStack())
+}
+
+func testLocalVars(vars rtda.LocalVars) {
+	vars.SetInt(0,100)
+	vars.SetInt(1,-100)
+	vars.SetLong(2,299724580)
+	vars.SetLong(4,-299724580)
+	vars.SetFloat(6,3.1415926)
+	vars.SetDouble(7,2.7182812845)
+	vars.SetRef(9,nil)
+	println(vars.GetInt(0))
+	println(vars.GetInt(1))
+	println(vars.GetLong(2))
+	println(vars.GetLong(4))
+	println(vars.GetFloat(6))
+	println(vars.GetDouble(7))
+	println(vars.GetRef(9))
+}
+func testOperandStack(ops *rtda.OperandStack) {
+	ops.PushInt(100)
+	ops.PushInt(-100)
+	ops.PushLong(299724580)
+	ops.PushLong(-299724580)
+	ops.PushFloat(3.1415926)
+	ops.PushDouble(2.7182812845)
+	ops.PushRef(nil)
+	println(ops.PopRef())
+	println(ops.PopDouble())
+	println(ops.PopFloat())
+	println(ops.PopLong())
+	println(ops.PopLong())
+	println(ops.PopInt())
+	println(ops.PopInt())
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

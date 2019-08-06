@@ -12,7 +12,7 @@ type Thread struct {
  */
 func NewThread() *Thread{
 	return &Thread{
-		stack:newThread(1024),
+		stack:newStack(1024),
 	}
 }
 func (self *Thread) PC() int {
@@ -25,7 +25,7 @@ func (self *Thread) PushFrame(frame *Frame) {
 	self.stack.push(frame)
 }
 func (self *Thread) PopFrame() *Frame {
-	return self.stack.pop()_
+	return self.stack.pop()
 }
 /**
 返回当前帧

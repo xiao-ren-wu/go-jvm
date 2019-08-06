@@ -3,7 +3,7 @@ package rtda
 import (
 	"math"
 )
-
+//操作数栈
 type OperandStack struct {
 	size  uint
 	slots []Slot
