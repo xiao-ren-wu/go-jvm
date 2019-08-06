@@ -7,22 +7,22 @@
 
 ~~~c
 ClassFile{
-	u4					magic;									//魔数
+	u4					magic;								//魔数
 	u2					minor_version;							//次版本号
 	u2 					major_version;							//主版本号
-	u2					constant_pool_count;					//常量池计数器
-	cp_info				constant_pool[constant_pool_count-1]	//常量池
+	u2					constant_pool_count;						//常量池计数器
+	cp_info				constant_pool[constant_pool_count-1]					//常量池
 	u2					access_flags;							//访问标志
-	u2					this_class;								//类索引
+	u2					this_class;							//类索引
 	u2					super_class;							//父类索引
 	u2					interfaces_count;						//接口计数器
-	u2					interfaces[interfaces_count];			//接口表
+	u2					interfaces[interfaces_count];					//接口表
 	u2					fields_count;							//字段计数器
-	field_info			fields[fields_count];					//字段表
+	field_info			fields[fields_count];							//字段表
 	u2					methods_count;							//方法计数器
-	method_info			methods[methods_count];					//方法表
+	method_info			methods[methods_count];							//方法表
 	u2					attributes_count;						//属性计数器
-	attribute_info		attributes[attributes_count];			//属性表
+	attribute_info		attributes[attributes_count];							//属性表
 }
 ~~~
 
