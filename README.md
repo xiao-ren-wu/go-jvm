@@ -112,7 +112,61 @@ Java的线程私有的运行时数据区如下：
 5. 操作数栈的大小也是在编译时期就确定的。`size`字段用于记录栈顶位置。
 6. 局部变量表和操作数栈都是按照索引访问`[]Slot`的,这个数组的每个元素至少可以容纳一个`int`或者引用值，连续的两个元素可以容纳一个`long`或者`double`
 
+### 指令集和解释器
 
+类或者接口的方法信息存放在class文件的`method_indo`结构体中，如果方法不是抽象的，也不是本地方法，方法的Java代码就会被编译器编译成字节码（即使方法是空的，编译器也会生成一条return语句），存放在`method_info`结构的`Code`属性中。
+
+1. 字节码中存放编码后的Java虚拟机指令，每条指令都是以单字节的操作码开头，只能使用一个字节表示操作码，所以Java虚拟机最多支持256（2^8）条指令。
+
+2. Java虚拟机指令集和汇编类似，为了便于记忆，Java虚拟机给每个操作数都指定了一个“助记符”。
+   ​	`0x00`这条指令什么都不做，所以他的助记符是`nop`(no operation)
+
+3. java 虚拟机使用的是变长指令，操作码后面可以跟零字节或多字节的操作数。
+
+4. 操作数栈和局部变量表只存放数据的值，并不记录数据类型。所以，指令必须自己知道在操作什么数据类型，这些都会直接反应在操作码的助记符上。
+
+   ​	`iadd`指令就是对int类型的值进行加法操作。
+
+   **助记符首字母和变量类型对应表**
+
+   | 助记符首字母 |   数据类型   |     例        子     |
+   | :----------: | :----------: | :------------------: |
+   |      a       |  reference   | aload,astore,areturn |
+   |      b       | byte/boolean |    bipush,baload     |
+   |      c       |     char     |    caload,castore    |
+   |      d       |    double    |  dload,dstore,dadd   |
+   |      f       |    float     |  float,fstore,fadd   |
+   |      i       |     int      |  iload,istore,iadd   |
+   |      l       |     long     |   load,lsotre,ladd   |
+   |      s       |    short     |    sipush,satore     |
+
+   5. java 虚拟机把已经定义好的205条指令按用途分成了11类，分别是：常量（constants）指令，加载（loads）指令，存储（stores）指令，操作数栈（stack）指令，数学（math）指令，转换（conversions）指令，比较（comparisons）指令，控制（control）指令，引用（references）指令，拓展（extended）指令和保留（reserved）指令。
+
+   6. 保留指令一共有三条，其中一条是给调试器用的，用于实现断点，操作码是202（0xCA）`breakpoint`另外两条是给Java虚拟机实现内部使用操作码是254（0xFE）`impdep1`和266（0xFF）`impdep2`,这三条指令不允许出现在字节码文件中。
+
+   **Java虚拟机解释器的大致逻辑：**
+
+~~~java
+do{
+    自动计算pc寄存器以及从pc寄存器的位置取出的操作码;
+    if (存在操作数) {
+        取出操作数;
+    }
+    执行操作码定义的操作;
+}while(处理下一次循环);
+~~~
+
+*====>>> Go*
+
+~~~go
+for {
+    pc := calculatePC()
+	opcode :=bytecode[pc]
+	inst := createInst(opcode)
+	inst.fetchOperands(bytecode)
+	inst.execute()
+}
+~~~
 
 
 

@@ -60,7 +60,7 @@ func printClassInfo(cf *classfile.ClassFile) {
 	fmt.Printf("this.class:%v\n", cf.ClassName())
 	fmt.Printf("super.class:%v\n", cf.SuperClassName())
 	fmt.Printf("interfaces:%v\n", cf.InterfacesNames())
-	fmt.Printf("fields count:%v\n",len(cf.Fields()))
+	fmt.Printf("fields count:%v\n", len(cf.Fields()))
 	for _, f := range cf.Fields() {
 		fmt.Printf(" %s\n", f.Name())
 	}
@@ -70,20 +70,20 @@ func printClassInfo(cf *classfile.ClassFile) {
 	}
 }
 
-func startJVM(){
-	frame :=rtda.NewFrame(100,100)
+func startJVM() {
+	frame := rtda.NewFrame(100, 100)
 	testLocalVars(frame.LocalVars())
 	testOperandStack(frame.OperandStack())
 }
 
 func testLocalVars(vars rtda.LocalVars) {
-	vars.SetInt(0,100)
-	vars.SetInt(1,-100)
-	vars.SetLong(2,299724580)
-	vars.SetLong(4,-299724580)
-	vars.SetFloat(6,3.1415926)
-	vars.SetDouble(7,2.7182812845)
-	vars.SetRef(9,nil)
+	vars.SetInt(0, 100)
+	vars.SetInt(1, -100)
+	vars.SetLong(2, 299724580)
+	vars.SetLong(4, -299724580)
+	vars.SetFloat(6, 3.1415926)
+	vars.SetDouble(7, 2.7182812845)
+	vars.SetRef(9, nil)
 	println(vars.GetInt(0))
 	println(vars.GetInt(1))
 	println(vars.GetLong(2))
@@ -108,32 +108,3 @@ func testOperandStack(ops *rtda.OperandStack) {
 	println(ops.PopInt())
 	println(ops.PopInt())
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
