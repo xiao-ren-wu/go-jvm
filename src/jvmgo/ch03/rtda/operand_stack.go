@@ -3,6 +3,7 @@ package rtda
 import (
 	"math"
 )
+
 //操作数栈
 type OperandStack struct {
 	size  uint
@@ -52,6 +53,7 @@ func (self *OperandStack) PushDouble(val float64) {
 	bits := math.Float64bits(val)
 	self.PushLong(int64(bits))
 }
+
 func (self *OperandStack) PopDouble() float64 {
 	bits := uint64(self.PopLong())
 	return math.Float64frombits(bits)
@@ -66,4 +68,12 @@ func (self *OperandStack) PopRef() *Object {
 	ref := self.slots[self.size].ref
 	self.slots[self.size].ref = nil //帮助垃圾回收
 	return ref
+}
+func (self *OperandStack) PushSlot(slot Slot) {
+	self.slots[self.size] = slot
+	self.size++
+}
+func (self *OperandStack) PopSlot() Slot {
+	self.size--
+	return self.slots[self.size]
 }
