@@ -18,20 +18,20 @@ package classfile
 		u2	attributes_count;
 		attribute_info	attributes[attributes_count]
 	}
- */
+*/
 type CodeAttribute struct {
-	cp 				ConstantPool
-	maxStack		uint16
-	maxLocals		uint16
-	code 			[]byte
-	exceptionTable	[]*ExceptionTableEntry
-	attributes 		[]AttributeInfo
+	cp             ConstantPool
+	maxStack       uint16
+	maxLocals      uint16
+	code           []byte
+	exceptionTable []*ExceptionTableEntry
+	attributes     []AttributeInfo
 }
 type ExceptionTableEntry struct {
-	startPc 	uint16
-	endPc		uint16
-	handlerPc	uint16
-	catchType	uint16
+	startPc   uint16
+	endPc     uint16
+	handlerPc uint16
+	catchType uint16
 }
 
 func (self *CodeAttribute) readInfo(reader *ClassReader) {
@@ -40,12 +40,12 @@ func (self *CodeAttribute) readInfo(reader *ClassReader) {
 	codeLength := reader.readUint32()
 	self.code = reader.readBytes(codeLength)
 	self.exceptionTable = readExceptionTable(reader)
-	self.attributes = readAttributes(reader,self.cp)
+	self.attributes = readAttributes(reader, self.cp)
 }
 func readExceptionTable(reader *ClassReader) []*ExceptionTableEntry {
-	exceptionTableLength :=reader.readUint16()
-	exceptionTable :=make([]*ExceptionTableEntry,exceptionTableLength)
-	for i:=range exceptionTable {
+	exceptionTableLength := reader.readUint16()
+	exceptionTable := make([]*ExceptionTableEntry, exceptionTableLength)
+	for i := range exceptionTable {
 		exceptionTable[i] = &ExceptionTableEntry{
 			startPc:   reader.readUint16(),
 			endPc:     reader.readUint16(),
@@ -54,4 +54,13 @@ func readExceptionTable(reader *ClassReader) []*ExceptionTableEntry {
 		}
 	}
 	return exceptionTable
+}
+func (self *CodeAttribute) MaxStack() uint16 {
+	return self.maxStack
+}
+func (self *CodeAttribute) MaxLocals() uint16 {
+	return self.maxLocals
+}
+func (self *CodeAttribute) Code() []byte {
+	return self.code
 }

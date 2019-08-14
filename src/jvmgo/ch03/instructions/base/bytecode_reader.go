@@ -30,10 +30,28 @@ func (self *BytecodeReader) ReadInt16() int16 {
 	return int16(self.ReadUint16())
 }
 
-func (self *BytecodeReader) ReaderInt32() int32 {
+func (self *BytecodeReader) ReadInt32() int32 {
 	byte1 := int32(self.ReadUint8())
 	byte2 := int32(self.ReadUint8())
 	byte3 := int32(self.ReadUint8())
 	byte4 := int32(self.ReadUint8())
 	return (byte1 << 24) | (byte2 << 16) | (byte3 << 8) | byte4
+}
+
+func (self *BytecodeReader) ReadInt32s(n int32) []int32 {
+	ints := make([]int32, n)
+	for i := range ints {
+		ints[i] = self.ReadInt32()
+	}
+	return ints
+}
+
+/*
+	tableswitch指令操作码后面有0~3字节的padding，
+	保证defaultOffset在字节码中地址是4的倍数
+*/
+func (self *BytecodeReader) SkipPadding() {
+	for self.pc%4 != 0 {
+		self.ReadUint8()
+	}
 }

@@ -2,16 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b83811ba-daea-42cf-b124-507328694fbf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/lcmp.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/conversions/d2x.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/conversions/f2x.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/conversions/i2x.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/conversions/l2x.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/and.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/iinc.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/rem.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/sh.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/extended/goto_w.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/extended/ifnull.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/loads/aload.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/loads/dload.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/loads/fload.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/loads/lload.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/stores/astore.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/stores/dstore.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/stores/fstore.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/stores/istore.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/interpreter.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/classfile/attr_code.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/classfile/attr_code.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/classfile/nember_Info.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/classfile/nember_Info.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/base/Branch.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/base/Branch.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/base/bytecode_reader.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/base/bytecode_reader.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/dcmp.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/dcmp.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/fcmp.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/fcmp.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/if_acmp.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/if_acmp.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/if_icmp.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/if_icmp.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/ifcond.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/ifcond.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/control/goto.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/control/goto.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/control/lookupswitch.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/control/lookupswitch.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/control/tableswitch.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/control/tableswitch.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/extended/wide.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/extended/wide.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/stores/stores.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/stores/lstores.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/Frame.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/Frame.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/thread.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/thread.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -168,6 +186,8 @@
       <workItem from="1565183462514" duration="2363000" />
       <workItem from="1565219613052" duration="5035000" />
       <workItem from="1565306146837" duration="4099000" />
+      <workItem from="1565651649710" duration="4337000" />
+      <workItem from="1565738026765" duration="5010000" />
     </task>
     <servers />
   </component>
@@ -199,16 +219,6 @@
           <url>file://$PROJECT_DIR$/src/jvmgo/ch03/classfile/class_file.go</url>
           <line>65</line>
           <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/jvmgo/ch03/classfile/nember_Info.go</url>
-          <line>20</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/jvmgo/ch03/classfile/nember_Info.go</url>
-          <line>34</line>
-          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
