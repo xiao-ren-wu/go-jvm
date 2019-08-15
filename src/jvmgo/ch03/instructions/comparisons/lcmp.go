@@ -5,9 +5,7 @@ import (
 	"jvmgo/ch03/rtda"
 )
 
-type LCMP struct {
-	base.NoOperandsInstruction
-}
+type LCMP struct{ base.NoOperandsInstruction }
 
 func (self *LCMP) Execute(frame *rtda.Frame) {
 	stack := frame.OperandStack()
@@ -21,3 +19,4 @@ func (self *LCMP) Execute(frame *rtda.Frame) {
 		stack.PushInt(-1)
 	}
 }
+

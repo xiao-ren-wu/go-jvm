@@ -27,7 +27,7 @@ type ACONST_NULL struct {
 type DCONST_0 struct {
 	base.NoOperandsInstruction
 }
-type DONST_1 struct {
+type DCONST_1 struct {
 	base.NoOperandsInstruction
 }
 type FCONST_0 struct {
@@ -86,7 +86,7 @@ func (self *ACONST_NULL) Execute(frame *rtda.Frame) {
 func (self *DCONST_0) Execute(frame *rtda.Frame) {
 	frame.OperandStack().PushDouble(0.0)
 }
-func (self *DONST_1) Execute(frame *rtda.Frame) {
+func (self *DCONST_1) Execute(frame *rtda.Frame) {
 	frame.OperandStack().PushDouble(1.0)
 }
 func (self *FCONST_0) Execute(frame *rtda.Frame) {

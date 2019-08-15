@@ -9,7 +9,7 @@ type Frame struct {
 	nextPC       int           //程序计数器
 }
 
-func NewFrame(thread *Thread, maxLocals, maxStack uint) *Frame {
+func newFrame(thread *Thread, maxLocals, maxStack uint) *Frame {
 	return &Frame{
 		thread:       thread,
 		localVars:    newLocalVars(maxLocals),
@@ -22,4 +22,18 @@ func (self *Frame) LocalVars() LocalVars {
 }
 func (self *Frame) OperandStack() *OperandStack {
 	return self.operandStack
+}
+// getters & setters
+func (self *Frame) Thread() *Thread {
+	return self.thread
+}
+func (self *Frame) NextPC() int {
+	return self.nextPC
+}
+func (self *Frame) SetNextPC(nextPC int) {
+	self.nextPC = nextPC
+}
+
+func (self *Frame) RevertNextPC() {
+	self.nextPC = self.thread.pc
 }
