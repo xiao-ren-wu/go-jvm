@@ -2,28 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b83811ba-daea-42cf-b124-507328694fbf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/factory.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/add.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/div.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/mul.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/neg.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/or.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/sub.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/xor.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/ClassMember.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/access_flags.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/field.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/method.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/base/bytecode_reader.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/base/bytecode_reader.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/if_icmp.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/if_icmp.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/ifcond.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/ifcond.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/lcmp.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/lcmp.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/constants/const.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/constants/const.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/loads/fload.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/loads/fload.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/and.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/and.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/iinc.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/iinc.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/rem.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/rem.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/sh.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/sh.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/interpreter.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/interpreter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/Frame.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/Frame.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/thread.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/thread.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/local_vars.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/local_vars.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/object.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/object.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/operand_stack.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/operand_stack.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/slot.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/slot.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,16 +65,17 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\go-jvm\src\jvmgo\ch03\rtda\heap" />
+      <recent name="H:\go-jvm\src\jvmgo\ch03\instructions" />
+      <recent name="H:\go-jvm\src\jvmgo\ch03\instructions\conversions" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="H:\go-jvm\src\jvmgo\ch03\instructions" />
       <recent name="H:\go-jvm\src\jvmgo\ch03\instructions\math" />
       <recent name="H:\go-jvm\src\jvmgo\ch03\classfile" />
       <recent name="H:\go-jvm\src\jvmgo" />
       <recent name="H:\go-jvm\src\jvmgo\ch02" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="H:\go-jvm\src\jvmgo\ch03\instructions" />
-      <recent name="H:\go-jvm\src\jvmgo\ch03\instructions\conversions" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -186,6 +176,7 @@
       <workItem from="1565651649710" duration="4337000" />
       <workItem from="1565738026765" duration="5010000" />
       <workItem from="1565824478578" duration="4794000" />
+      <workItem from="1565910966598" duration="3273000" />
     </task>
     <servers />
   </component>

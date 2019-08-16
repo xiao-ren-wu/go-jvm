@@ -170,13 +170,75 @@ for {
 
 
 
+### 类和对象
 
+> ​		方法区主要存放从class文件中获取的类信息，此外，类变量也存在方法区中，当Java虚拟机第一次使用某个类时，他会搜索类路径，找到对应的class字节码文件，然后读取并解析class文件，把相关信息放进方法区。至于方法区到底位于何处，是固定大小还是动态调整，是否参与垃圾回收，以及如何在方法区中存放类数据等，Java虚拟机规范并没有给出定义
 
+#### 类，字段，方法和常量池的关系
 
+![](H:\go-jvm\images\1565914844813.png)
 
+##### Class
 
+~~~go
+type Class struct {
+	accessFlags       uint16
+	name              string //this class name
+	superClassName    string
+	interfaceNames    []string
+	constantPool      *ConstantPool
+	fields            []*Field
+	methods           []*Method
+	loader            *ClassLoader
+	superClass        *Class
+	interfaces        []*Class
+	instanceSlotCount uint
+	staticSlotCount   uint
+	staticVars        *Slots
+}
+~~~
 
+##### ClassMember
 
+~~~go
+type ClassMember struct {
+	accessFlags uint16
+	name        string
+	description string
+	class       *Class
+}
+~~~
+
+##### Field
+
+~~~go
+type Field struct {
+	ClassMember
+}
+~~~
+
+##### Method
+
+~~~go
+type Method struct {
+	ClassMember
+	maxStack uint16
+	maxLocal uint16
+	code     []byte
+}
+~~~
+
+##### ConstantPool
+
+```go
+ConstantPool [] ConstantInfo
+```
+
+#### 运行时常量池
+
+运行时常量池主要存放两类信息：字面量（Iiteral）和符号引用（symbolic reference）
+
+![1565915405316](H:\go-jvm\images\1565915405316.png)
 
 
 

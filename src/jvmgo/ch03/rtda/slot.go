@@ -1,4 +1,7 @@
 package rtda
+
+import "jvmgo/ch03/rtda/heap"
+
 /*
 局部变量表：
 	执行方法所需的局部变量表大小和操作数栈深度是由编译器提前计算好的
@@ -8,7 +11,7 @@ package rtda
 			两个连续的元素至少可以容纳一个long或者double
 */
 type Slot struct {
-	num int32		//存放整数
-	ref *Object		//存放引用
+	num int32        //存放整数
+	ref *heap.Object //存放引用
 }
 

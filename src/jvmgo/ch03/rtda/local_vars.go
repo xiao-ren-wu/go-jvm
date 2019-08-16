@@ -1,6 +1,9 @@
 package rtda
 
-import "math"
+import (
+	"jvmgo/ch03/rtda/heap"
+	"math"
+)
 
 /*
 局部变量表：
@@ -70,9 +73,9 @@ func (self LocalVars) GetDouble(index uint) float64 {
 /*
 引用类型直接存取
 */
-func (self LocalVars) SetRef(index uint, ref *Object) {
+func (self LocalVars) SetRef(index uint, ref *heap.Object) {
 	self[index].ref = ref
 }
-func (self LocalVars) GetRef(index uint) *Object {
+func (self LocalVars) GetRef(index uint) *heap.Object {
 	return self[index].ref
 }
