@@ -47,5 +47,6 @@ func loop(thread *rtda.Thread,bytecode []byte){
 
 		//execute
 		fmt.Printf("pc:%2d inst:%T %v\n",pc,inst,inst)
+		inst.Execute(frame)
 	}
 }

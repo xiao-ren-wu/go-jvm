@@ -37,7 +37,7 @@ func (self *IREM) Execute(frame *rtda.Frame) {
 	v1 := stack.PopInt()
 
 	if v2 == 0 {
-		frame.Thread().ThrowDivByZero()
+		//frame.Thread().ThrowDivByZero()
 	} else {
 		result := v1 % v2
 		stack.PushInt(result)
@@ -53,7 +53,7 @@ func (self *LREM) Execute(frame *rtda.Frame) {
 	v1 := stack.PopLong()
 
 	if v2 == 0 {
-		frame.Thread().ThrowDivByZero()
+		//frame.Thread().ThrowDivByZero()
 	} else {
 		result := v1 % v2
 		stack.PushLong(result)

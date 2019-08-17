@@ -10,7 +10,7 @@ type Class struct {
 	name              string //this class name
 	superClassName    string
 	interfaceNames    []string
-	constantPool      *ConstantPool
+	constantPool      *RunConstantPool
 	fields            []*Field
 	methods           []*Method
 	loader            *ClassLoader

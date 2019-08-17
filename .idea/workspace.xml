@@ -2,17 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b83811ba-daea-42cf-b124-507328694fbf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/ClassMember.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/access_flags.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/field.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/method.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/GaussTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/ConstantPool.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/local_vars.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/local_vars.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/object.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/object.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/operand_stack.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/operand_stack.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/slot.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/slot.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/base/bytecode_reader.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/base/bytecode_reader.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/if_acmp.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/comparisons/if_acmp.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/constants/nop.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/constants/nop.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/control/goto.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/control/goto.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/div.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/div.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/rem.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/math/rem.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/interpreter.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/interpreter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +47,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -62,7 +65,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -90,7 +93,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go cmd.go">
+  <component name="RunManager" selected="Go Build.go build main.go interpreter.go cmd.go">
     <configuration name="go build attr_signature.go cmd.go main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goworkspace" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -105,14 +108,6 @@
       <parameters value="-Xjre &quot;H:\String.class&quot;" />
       <kind value="DIRECTORY" />
       <filePath value="$PROJECT_DIR$/src/jvmgo/ch03/main.go" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="goworkspace" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/src/jvmgo/ch02/main.go" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -132,29 +127,28 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build main.go interpreter.go cmd.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goworkspace" />
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/src/jvmgo/ch01/main.go" />
+      <filePath value="$PROJECT_DIR$/src/jvmgo/ch03/main.go|$PROJECT_DIR$/src/jvmgo/ch03/interpreter.go|$PROJECT_DIR$/src/jvmgo/ch03/cmd.go" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Build.go build main.go" />
-      <item itemvalue="Go Build.go build main.go (1)" />
       <item itemvalue="Go Build.go build main.go (2)" />
       <item itemvalue="Go Build.go build go-jvm/" />
       <item itemvalue="Go Build.go build main.go cmd.go" />
       <item itemvalue="Go Build.go build attr_signature.go cmd.go main.go" />
+      <item itemvalue="Go Build.go build main.go interpreter.go cmd.go" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build main.go interpreter.go cmd.go" />
         <item itemvalue="Go Build.go build main.go cmd.go" />
         <item itemvalue="Go Build.go build main.go (2)" />
         <item itemvalue="Go Build.go build attr_signature.go cmd.go main.go" />
         <item itemvalue="Go Build.go build go-jvm/" />
-        <item itemvalue="Go Build.go build main.go cmd.go" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +170,9 @@
       <workItem from="1565651649710" duration="4337000" />
       <workItem from="1565738026765" duration="5010000" />
       <workItem from="1565824478578" duration="4794000" />
-      <workItem from="1565910966598" duration="3273000" />
+      <workItem from="1565910966598" duration="3849000" />
+      <workItem from="1566002454383" duration="28000" />
+      <workItem from="1566018280529" duration="6960000" />
     </task>
     <servers />
   </component>
@@ -200,14 +196,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/jvmgo/ch03/classpath/classpath.go</url>
-          <line>83</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/src/jvmgo/ch03/classfile/nember_Info.go</url>
+          <line>53</line>
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/jvmgo/ch03/classfile/class_file.go</url>
-          <line>65</line>
-          <option name="timeStamp" value="35" />
+          <url>file://$PROJECT_DIR$/src/jvmgo/ch03/main.go</url>
+          <line>78</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

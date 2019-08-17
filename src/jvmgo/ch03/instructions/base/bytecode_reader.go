@@ -47,7 +47,7 @@ func (self *BytecodeReader) ReadInt32s(n int32) []int32 {
 }
 
 /*
-	tableswitch指令操作码后面有0~3字节的padding，
+	table switch指令操作码后面有0~3字节的padding，
 	保证defaultOffset在字节码中地址是4的倍数
 */
 func (self *BytecodeReader) SkipPadding() {

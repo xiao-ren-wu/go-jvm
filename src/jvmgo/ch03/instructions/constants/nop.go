@@ -10,6 +10,6 @@ type NOP struct {
 }
 
 func (self *NOP) Execute(frame *rtda.Frame) {
-	// just no nothing
+	// just do nothing
 }
 

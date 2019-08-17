@@ -78,7 +78,7 @@ var (
 	astore_1      = &ASTORE_1{}
 	astore_2      = &ASTORE_2{}
 	astore_3      = &ASTORE_3{}
-	//iastore       = &stores.IASTORE{}todo
+	//iastore       = &stores.IASTORE{}
 	//lastore       = &stores.LASTORE{}
 	//fastore       = &stores.FASTORE{}
 	//dastore       = &stores.DASTORE{}
