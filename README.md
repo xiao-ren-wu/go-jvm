@@ -176,7 +176,7 @@ for {
 
 #### 类，字段，方法和常量池的关系
 
-![](H:\go-jvm\images\1565914844813.png)
+![](https://github.com/xiao-ren-wu/go-jvm/blob/master/images/1565914844813.png)
 
 ##### Class
 
@@ -238,7 +238,7 @@ ConstantPool [] ConstantInfo
 
 运行时常量池主要存放两类信息：字面量（Iiteral）和符号引用（symbolic reference）
 
-![1565915405316](H:\go-jvm\images\1565915405316.png)
+![1565915405316](https://github.com/xiao-ren-wu/go-jvm/blob/master/images/1565915405316.png)
 
 
 
