@@ -70,10 +70,10 @@ type ConstantStringInfo struct {
 		u1	tag;
 		u2	name_index;
 	}
- */
+*/
 type ConstantClassInfo struct {
-	cp 			ConstantPool
-	nameIndex	uint16
+	cp        ConstantPool
+	nameIndex uint16
 }
 
 /*
@@ -93,29 +93,40 @@ Java虚拟机定义了一种简单的语法来确定描述字段和方法：
 	1.3数组类型描述符是[+数组元素类型描述符
 2.  字段描述符就是字段类型的描述符
 3.	方法描述符是(分号分隔的参数类型描述符)+返回值类型描述符，其中void返回值由单个字母V表示
- */
+*/
 type ConstantNameAndTypeInfo struct {
-	nameIndex		uint16
-	descriptorIndex	uint16
+	nameIndex       uint16
+	descriptorIndex uint16
 }
 
 func (self *ConstantIntegerInfo) readInfo(reader *ClassReader) {
 	bytes := reader.readUint32()
 	self.val = int32(bytes)
 }
+func (self *ConstantIntegerInfo) Value() int32 {
+	return self.val
+}
 
 func (self *ConstantFloatInfo) readInfo(reader *ClassReader) {
 	bytes := reader.readUint32()
 	self.val = math.Float32frombits(bytes)
 }
-
+func (self *ConstantFloatInfo) Value() float32 {
+	return self.val
+}
 func (self *ConstantLongInfo) readInfo(reader *ClassReader) {
 	bytes := reader.readUint64()
 	self.val = int64(bytes)
 }
+func (self *ConstantLongInfo) Value() int64 {
+	return self.val
+}
 func (self *ConstantDoubleInfo) readInfo(reader *ClassReader) {
 	bytes := reader.readUint64()
 	self.val = math.Float64frombits(bytes)
+}
+func (self *ConstantDoubleInfo) Value() float64 {
+	return self.val
 }
 func (self *ConstantUtf8Info) readInfo(reader *ClassReader) {
 	length := uint32(reader.readUint16())
@@ -129,10 +140,10 @@ func (self *ConstantStringInfo) readInfo(reader *ClassReader) {
 	self.stringIndex = reader.readUint16()
 }
 func (self *ConstantClassInfo) readInfo(reader *ClassReader) {
-	self.nameIndex=reader.readUint16()
+	self.nameIndex = reader.readUint16()
 }
 func (self *ConstantNameAndTypeInfo) readInfo(reader *ClassReader) {
-	self.nameIndex=reader.readUint16()
+	self.nameIndex = reader.readUint16()
 	self.descriptorIndex = reader.readUint16()
 }
 func (self *ConstantClassInfo) Name() string {

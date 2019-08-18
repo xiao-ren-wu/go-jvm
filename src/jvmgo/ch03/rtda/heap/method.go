@@ -19,6 +19,7 @@ func newMethods(class *Class, cfMethods []*classfile.MemberInfo) []*Method {
 	}
 	return methods
 }
+
 func (self *Method) copyAttributes(cfMethod *classfile.MemberInfo) {
 	if codeAttr := cfMethod.CodeAttribute(); codeAttr != nil {
 		self.maxStack = codeAttr.MaxStack()
