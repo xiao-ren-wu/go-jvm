@@ -244,7 +244,7 @@ ConstantPool [] ConstantInfo
 
 类从被加载到虚拟机内存开始，到卸载出内存为止他的生命周期包括：
 
-![](H:\go-jvm\images\classLoad.png)
+![](https://github.com/xiao-ren-wu/go-jvm/blob/master/images/classLoad.png)
 
 其中“验证”，“准备”，“解析”这三个阶段称之为连接。
 
