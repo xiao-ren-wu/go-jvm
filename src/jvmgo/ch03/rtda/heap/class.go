@@ -1,6 +1,9 @@
 package heap
 
-import . "jvmgo/ch03/classfile"
+import (
+	. "jvmgo/ch03/classfile"
+	"strings"
+)
 
 /*
 Class 结构体
@@ -18,7 +21,7 @@ type Class struct {
 	interfaces        []*Class
 	instanceSlotCount uint
 	staticSlotCount   uint
-	staticVars        *Slots
+	staticVars        Slots
 }
 
 func newClass(cf *ClassFile) *Class {
@@ -31,4 +34,13 @@ func newClass(cf *ClassFile) *Class {
 	class.fields = newFields(class, cf.Fields())
 	class.methods = newMethods(class, cf.Methods())
 	return class
+}
+func (self *Class) isAccessibleTo(other *Class) bool {
+	return self.IsPublic() || self.getPackageName() == other.getPackageName()
+}
+func (self *Class) getPackageName() string {
+	if i := strings.LastIndex(self.name, "/"); i >= 0 {
+		return self.name[:i]
+	}
+	return ""
 }

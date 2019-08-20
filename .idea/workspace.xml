@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b83811ba-daea-42cf-b124-507328694fbf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_loader.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/cp_interface_methodref.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/cp_methodref.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/slots.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/classpath/classpath.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/classpath/classpath.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/MemberRef.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/cp_member_ref.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/classfile/nember_Info.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/classfile/nember_Info.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_loader.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_loader.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_member.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_member.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/cp_symref.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/cp_symref.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/field.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/field.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/object.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/object.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -168,6 +172,7 @@
       <workItem from="1566018280529" duration="9311000" />
       <workItem from="1566093362587" duration="3265000" />
       <workItem from="1566170187836" duration="3131000" />
+      <workItem from="1566256728936" duration="4624000" />
     </task>
     <servers />
   </component>
@@ -186,16 +191,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/jvmgo/ch03/classfile/nember_Info.go</url>
-          <line>53</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

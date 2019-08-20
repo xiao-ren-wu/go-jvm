@@ -5,12 +5,16 @@ import "jvmgo/ch03/classfile"
 type ClassMember struct {
 	accessFlags uint16
 	name        string
-	description string
+	descriptor  string
 	class       *Class
 }
 
 func (self *ClassMember) copyMemberInfo(memberInfo *classfile.MemberInfo) {
 	self.accessFlags = memberInfo.AccessFlags()
 	self.name = memberInfo.Name()
-	self.description = memberInfo.Descriptor()
+	self.descriptor = memberInfo.Descriptor()
+}
+
+func (self *ClassMember)Descriptor() string  {
+	return self.descriptor
 }
