@@ -9,7 +9,7 @@ import (
 Class 结构体
 */
 type Class struct {
-	accessFlags       uint16
+	AccessFlags
 	name              string //this class name
 	superClassName    string
 	interfaceNames    []string
@@ -43,4 +43,13 @@ func (self *Class) getPackageName() string {
 		return self.name[:i]
 	}
 	return ""
+}
+func (self *Class) NewObject() *Object {
+	return newObject(self)
+}
+func (self *Class) ConstantPool() *RunConstantPool {
+	return self.constantPool
+}
+func (self *Class) StaticVars() Slots {
+	return self.staticVars
 }

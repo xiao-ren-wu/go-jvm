@@ -4,8 +4,8 @@ import "jvmgo/ch03/classfile"
 
 type Method struct {
 	ClassMember
-	maxStack uint16
-	maxLocal uint16
+	maxStack uint
+	maxLocal uint
 	code     []byte
 }
 
@@ -22,8 +22,14 @@ func newMethods(class *Class, cfMethods []*classfile.MemberInfo) []*Method {
 
 func (self *Method) copyAttributes(cfMethod *classfile.MemberInfo) {
 	if codeAttr := cfMethod.CodeAttribute(); codeAttr != nil {
-		self.maxStack = codeAttr.MaxStack()
-		self.maxLocal = codeAttr.MaxLocals()
+		self.maxStack = uint(codeAttr.MaxStack())
+		self.maxLocal = uint(codeAttr.MaxLocals())
 		self.code = codeAttr.Code()
 	}
+}
+func (self *Method) MaxLocals() uint {
+	return self.maxLocal
+}
+func (self *Method) MaxStack() uint {
+	return self.maxLocal
 }

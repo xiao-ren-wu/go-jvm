@@ -4,12 +4,12 @@ import "jvmgo/ch03/classfile"
 
 type MemberRef struct {
 	SymRef
-	name        string
-	description string
+	name       string
+	descriptor string
 }
 
 func (self *MemberRef) copyMemberRefInfo(refInfo *classfile.ConstantMemberrefInfo) {
 	self.className = refInfo.ClassName()
-	self.name, self.description = refInfo.NameAndDescriptor()
+	self.name, self.descriptor = refInfo.NameAndDescriptor()
 }
 
