@@ -53,3 +53,6 @@ func (self *Class) ConstantPool() *RunConstantPool {
 func (self *Class) StaticVars() Slots {
 	return self.staticVars
 }
+func (self *Class) Fields() []*Field {
+	return self.fields
+}
