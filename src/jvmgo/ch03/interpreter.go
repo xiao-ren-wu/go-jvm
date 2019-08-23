@@ -2,26 +2,21 @@ package main
 
 import (
 	"fmt"
-	"jvmgo/ch03/classfile"
 	"jvmgo/ch03/instructions"
 	"jvmgo/ch03/instructions/base"
 	"jvmgo/ch03/rtda"
+	"jvmgo/ch03/rtda/heap"
 )
 
 /*
 调用MemberInfo结构体的CodeAttribute方法可以获取他的Code属性
  */
-func interpreter(methodInfo *classfile.MemberInfo) {
-	codeAttr:=methodInfo.CodeAttribute()
-	maxLocals:=codeAttr.MaxLocals()
-	maxStack:=codeAttr.MaxStack()
-	bytecode:=codeAttr.Code()
-
+func interpreter(method *heap.Method) {
 	thread:=rtda.NewThread()
-	frame:=thread.NewFrame(uint(maxLocals), uint(maxStack))
+	frame:=thread.NewFrame(method)
 	thread.PushFrame(frame)
 	defer catchErr(frame)
-	loop(thread,bytecode)
+	loop(thread,method.Code())
 }
 
 func catchErr(frame *rtda.Frame) {

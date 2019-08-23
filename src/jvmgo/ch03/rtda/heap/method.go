@@ -33,3 +33,6 @@ func (self *Method) MaxLocals() uint {
 func (self *Method) MaxStack() uint {
 	return self.maxLocal
 }
+func (self *Method) Code() []byte {
+	return self.code
+}

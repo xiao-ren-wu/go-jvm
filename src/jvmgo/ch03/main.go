@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"jvmgo/ch03/classfile"
 	"jvmgo/ch03/classpath"
+	"jvmgo/ch03/rtda/heap"
 	"strings"
 )
 
@@ -69,24 +70,64 @@ func printClassInfo(cf *classfile.ClassFile) {
 	}
 }
 
+//func startJVM12() {
+//	cmd := &Cmd{XjreOption: "H:\\go-jvm", class: "src.jvmgo.ch03.GaussTest"}
+//	className := strings.Replace(cmd.class, ".", "/", -1)
+//	cp := classpath.Parse(cmd.XjreOption, cmd.cpOption)
+//	cf := loadClass(className, cp)
+//	mainMethod := getMainMethod(cf)
+//	if mainMethod != nil {
+//		interpreter(mainMethod)
+//	} else {
+//		fmt.Printf("No Main method")
+//	}
+//}
+
+//func getMainMethod(cf *classfile.ClassFile) *classfile.MemberInfo {
+//	for _, m := range cf.Methods() {
+//		if m.Name() == "main" {
+//			return m
+//		}
+//	}
+//	return nil
+//}
 func startJVM() {
-	cmd := &Cmd{XjreOption: "H:\\go-jvm", class: "src.jvmgo.ch03.GaussTest"}
-	className := strings.Replace(cmd.class, ".", "/", -1)
-	cp := classpath.Parse(cmd.XjreOption, cmd.cpOption)
-	cf := loadClass(className, cp)
-	mainMethod := getMainMethod(cf)
-	if mainMethod != nil {
+	cmd := &Cmd{XjreOption: "H:\\go-jvm", class: "src.jvmgo.ch03.MyObject"}
+	cp:=classpath.Parse(cmd.XjreOption,cmd.cpOption)
+	classloader:=heap.NewClassLoader(cp)
+	className:=strings.Replace(cmd.class,".","/",-1)
+	mainClass:=classloader.LoadClass(className)
+	mainMethod:=mainClass.GetMainMethod()
+	if mainMethod !=nil{
 		interpreter(mainMethod)
-	} else {
-		fmt.Printf("No Main method")
+	}else{
+		fmt.Printf("Main method not find in class %s\n",cmd.class)
 	}
 }
 
-func getMainMethod(cf *classfile.ClassFile) *classfile.MemberInfo {
-	for _, m := range cf.Methods() {
-		if m.Name() == "main" {
-			return m
-		}
-	}
-	return nil
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
