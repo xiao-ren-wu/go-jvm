@@ -33,7 +33,7 @@ func (self *ClassLoader) loadNonArrayClass(name string) *Class {
 	data, entry := self.readClass(name)
 	class := self.defineClass(data)
 	link(class)
-	fmt.Printf("[Loaded %s from %s]", name, entry)
+	fmt.Println("[Loaded %s from %s]", name, entry)
 	return class
 }
 func (self *ClassLoader) readClass(name string) ([]byte, classpath.Entry) {

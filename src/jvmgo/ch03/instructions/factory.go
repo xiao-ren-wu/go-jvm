@@ -9,6 +9,7 @@ import (
 	. "jvmgo/ch03/instructions/conversions"
 	. "jvmgo/ch03/instructions/loads"
 	. "jvmgo/ch03/instructions/math"
+	"jvmgo/ch03/instructions/references"
 	. "jvmgo/ch03/instructions/stack"
 	. "jvmgo/ch03/instructions/stores"
 )
@@ -202,8 +203,8 @@ func NewInstruction(opcode byte) base.Instruction {
 		return &BIPUSH{}
 	case 0x11:
 		return &SIPUSH{}
-	//case 0x12:
-	//	return &LDC{}
+	case 0x12:
+		return &LDC{}
 	//case 0x13:
 	//	return &LDC_W{}
 	//case 0x14:
@@ -540,8 +541,8 @@ func NewInstruction(opcode byte) base.Instruction {
 	//	return &INVOKE_INTERFACE{}
 	//case 0xba:
 	//	return &INVOKE_DYNAMIC{}
-	//case 0xbb:
-	//	return &NEW{}
+	case 0xbb:
+		return &references.NEW{}
 	//case 0xbc:
 	//	return &NEW_ARRAY{}
 	//case 0xbd:

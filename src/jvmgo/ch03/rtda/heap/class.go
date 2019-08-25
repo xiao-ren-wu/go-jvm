@@ -57,11 +57,11 @@ func (self *Class) Fields() []*Field {
 	return self.fields
 }
 func (self *Class) GetMainMethod() *Method {
-	return self.getStaticMethod("main", "[Ljava/lang/String;]V")
+	return self.getStaticMethod("main", "([Ljava/lang/String;)V")
 }
 func (self *Class) getStaticMethod(name, descriptor string) *Method {
 	for _, method := range self.methods {
-		if method.IsStatic() && method.name == name && method.descriptor == descriptor {
+		if method.IsStatic() && method.name == name {
 			return method
 		}
 	}

@@ -92,7 +92,7 @@ func printClassInfo(cf *classfile.ClassFile) {
 //	return nil
 //}
 func startJVM() {
-	cmd := &Cmd{XjreOption: "H:\\go-jvm", class: "src.jvmgo.ch03.MyObject"}
+	cmd := &Cmd{XjreOption: "C:\\Program Files\\Java\\jre1.8.0_191", class: "src.jvmgo.ch03.MyObject"}
 	cp:=classpath.Parse(cmd.XjreOption,cmd.cpOption)
 	classloader:=heap.NewClassLoader(cp)
 	className:=strings.Replace(cmd.class,".","/",-1)
@@ -104,30 +104,4 @@ func startJVM() {
 		fmt.Printf("Main method not find in class %s\n",cmd.class)
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
