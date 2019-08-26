@@ -4,9 +4,10 @@ import "jvmgo/ch03/classfile"
 
 type Method struct {
 	ClassMember
-	maxStack uint
-	maxLocal uint
-	code     []byte
+	maxStack     uint
+	maxLocal     uint
+	code         []byte
+	argSlotCount uint
 }
 
 func newMethods(class *Class, cfMethods []*classfile.MemberInfo) []*Method {
@@ -16,6 +17,7 @@ func newMethods(class *Class, cfMethods []*classfile.MemberInfo) []*Method {
 		methods[i].class = class
 		methods[i].copyMemberInfo(cfMethod)
 		methods[i].copyAttributes(cfMethod)
+		methods[i].calArgSlotCount()
 	}
 	return methods
 }
@@ -35,4 +37,19 @@ func (self *Method) MaxStack() uint {
 }
 func (self *Method) Code() []byte {
 	return self.code
+}
+func (self *Method) ArgSlotCount() uint {
+	return self.argSlotCount
+}
+func (self *Method) calArgSlotCount() {
+	parsedDescriptor := parseMethodDescriptor(self.descriptor)
+	for _, paramType := range parsedDescriptor.parameterTypes {
+		self.argSlotCount++
+		if paramType == "J" || paramType == "D" {
+			self.argSlotCount++
+		}
+	}
+	if !self.IsStatic() {
+		self.argSlotCount++
+	}
 }

@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b83811ba-daea-42cf-b124-507328694fbf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/base/method_invoke_logic.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/method_descritor.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/method_lookup.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/classfile/constant_info.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/classfile/constant_info.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/classfile/constant_pool.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/classfile/constant_pool.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/classfile/cp_member_ref.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/classfile/cp_member_ref.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/factory.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/factory.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_loader.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_loader.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/cp_interface_methodref.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/cp_interface_methodref.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/cp_methodref.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/cp_methodref.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/method.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/method.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/local_vars.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/local_vars.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -170,6 +170,7 @@
       <workItem from="1566628644373" duration="1212000" />
       <workItem from="1566664223533" duration="15000" />
       <workItem from="1566728919517" duration="8453000" />
+      <workItem from="1566775429749" duration="3772000" />
     </task>
     <servers />
   </component>
@@ -241,11 +242,6 @@
           <url>file://$PROJECT_DIR$/src/jvmgo/ch03/main.go</url>
           <line>99</line>
           <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/jvmgo/ch03/interpreter.go</url>
-          <line>29</line>
-          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
