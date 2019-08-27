@@ -53,3 +53,4 @@ func (self *Method) calArgSlotCount() {
 		self.argSlotCount++
 	}
 }
+

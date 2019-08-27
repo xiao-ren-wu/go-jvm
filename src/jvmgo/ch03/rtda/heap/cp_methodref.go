@@ -36,3 +36,7 @@ func lookupMethod(class *Class, name, descriptor string) *Method {
 	}
 	return method
 }
+
+func (self *MethodRef) ResolvedMethod() *Method {
+	return self.method
+}

@@ -12,8 +12,27 @@ type INVOKE_VIRTUAL struct {
 }
 
 func (self *INVOKE_VIRTUAL) Execute(frame *rtda.Frame) {
-	cp := frame.Method().Class().ConstantPool()
-	methodRef := cp.GetConstant(self.Index).(*heap.MemberRef)
+	currentClass:=frame.Method().Class()
+	cp:=currentClass.ConstantPool()
+	methodRef:=cp.GetConstant(self.Index).(*heap.MethodRef)
+	resolveMethod:=methodRef.ResolvedMethod()
+	if resolveMethod.IsStatic(){
+		panic("java.lang.incompatibleClassError")
+	}
+	ref:=frame.OperandStack().GetRefFromTop(resolveMethod.ArgSlotCount()-1)
+	if ref==nil{
+		panic("java.lang.NullPointerException")
+	}
+	if resolveMethod.IsProtected()&&resolveMethod.Class().IsSuperClassOf(currentClass)&&resolveMethod.Class().GetPackageName()&&!ref.Class().IsSubClassOf(currentClass){
+		panic("java.lang.IllegalAccessError")
+	}
+
+	methodToBeInvoked:=heap.LookupMethodInClass(ref.Class(),methodRef.Name(),methodRef.Descriptor())
+
+	if methodToBeInvoked==nil||methodToBeInvoked.IsAbstract(){
+		panic("java.lang.AbstractMethodError")
+	}
+	base.InvokeMethod(frame,methodToBeInvoked)
 
 	if methodRef.Name() == "println" {
 		stack := frame.OperandStack()
