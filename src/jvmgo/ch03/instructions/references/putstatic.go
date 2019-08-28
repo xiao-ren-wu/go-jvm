@@ -25,6 +25,12 @@ func (self *PUT_STATIC) Execute(frame *rtda.Frame) {
 	field := fieldRef.ResolvedField()
 	class := field.Class()
 
+	if !class.InitStarted(){
+		frame.RevertNextPC()
+		base.InitClass(frame.Thread(),class)
+		return
+	}
+
 	if !field.IsFinal() {
 		if currentClass != class || currentMethod.Name() != "<clinit>" {
 			panic("java.lang.IllegalAccessError")

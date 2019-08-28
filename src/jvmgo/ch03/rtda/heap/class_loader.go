@@ -13,14 +13,16 @@ classMap字段记录已经加载的类数据
 key是类的完全限定名
 */
 type ClassLoader struct {
-	cp       *classpath.Classpath
-	classMap map[string]*Class
+	cp          *classpath.Classpath
+	verboseFlag bool
+	classMap    map[string]*Class
 }
 
-func NewClassLoader(cp *classpath.Classpath) *ClassLoader {
+func NewClassLoader(cp *classpath.Classpath, verboseFlag bool) *ClassLoader {
 	return &ClassLoader{
-		cp:       cp,
-		classMap: make(map[string]*Class),
+		cp:          cp,
+		verboseFlag: verboseFlag,
+		classMap:    make(map[string]*Class),
 	}
 }
 func (self *ClassLoader) LoadClass(name string) *Class {
@@ -33,7 +35,9 @@ func (self *ClassLoader) loadNonArrayClass(name string) *Class {
 	data, entry := self.readClass(name)
 	class := self.defineClass(data)
 	link(class)
-	fmt.Println("[Loaded %s from %s]", name, entry)
+	if self.verboseFlag{
+		fmt.Println("[Loaded %s from %s]", name, entry)
+	}
 	return class
 }
 func (self *ClassLoader) readClass(name string) ([]byte, classpath.Entry) {

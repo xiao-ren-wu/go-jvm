@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b83811ba-daea-42cf-b124-507328694fbf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/control/return.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/references/invokestatic.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/method_descriptor_parser.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/base/class_init_logic.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/references/invokeinterface.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/base/method_invoke_logic.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/base/method_invoke_logic.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/references/invokespecial.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/references/invokespecial.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/cmd.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/cmd.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/references/getstatic.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/references/getstatic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/references/invokestatic.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/references/invokestatic.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/references/invokevirtual.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/references/invokevirtual.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/cp_methodref.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/cp_methodref.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/method.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/method.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/method_descritor.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/method_descriptor.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/object.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/object.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/operand_stack.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/operand_stack.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/references/new.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/references/new.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/references/putstatic.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/references/putstatic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/interpreter.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/interpreter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_loader.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_loader.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/jvm_stack.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/jvm_stack.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/thread.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/thread.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -177,6 +179,7 @@
       <workItem from="1566728919517" duration="8453000" />
       <workItem from="1566775429749" duration="3772000" />
       <workItem from="1566861485194" duration="4901000" />
+      <workItem from="1566947480860" duration="4955000" />
     </task>
     <servers />
   </component>
@@ -200,29 +203,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/jvmgo/ch03/interpreter.go</url>
-          <line>14</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/src/jvmgo/ch03/main.go</url>
           <line>94</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_loader.go</url>
-          <line>26</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_loader.go</url>
-          <line>32</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_loader.go</url>
-          <line>46</line>
-          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/src/jvmgo/ch03/classpath/classpath.go</url>
