@@ -283,6 +283,44 @@ ConstantPool [] ConstantInfo
 | `instanceof`/`checkcast` |      判断对象是否属于某种类型      |
 |          `Idc`           | 把运行时常量池的常量推到操作数栈顶 |
 
+### 数组的实现
+
+数组在Java虚拟机中是一个比较特殊的概念，
+
+1. 数组和普通类是不同的，普通类从class文件中加载，但是数组类由Java虚拟机运行是生成，
+2. 数组的类名是左方括号（[）+数组元素的类型描述符；数组的类型描述符就是类名本身，例如：`[Ljava/lang/Object`;`String[][]`的类名是`[java/lang/String`;等等。
+
+3. 创建数组的方式和创建普通对象的方式不同，普通对象有new创建，然后由构造函数初始化，
+   1. 基本类型数组由`newarray`指令
+   2. 引用类型由`anewarray`指令创建
+   3. 多维数组由`multianewarray`
+4. 数组和普通对象的数据也不同，普通对象中存放的是实例变量，通过`putfield`和`getfield`指令存放，数组对象中则存放的是数组元素。通过`<t>aload`和`<t>astore`系列指令按索引存取，其中`<t>`可以是`a,b,c,d,f,i,l或者s`分别用于存取`引用类型、byte、char、double、float、int、long或者short`
+5. 还有一个`arraylength`用于获取数组的长度。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -83,3 +83,6 @@ func (self *Class) GetClinitMethod() *Method {
 func (self *Class) SuperClass() *Class {
 	return self.superClass
 }
+func (self *Class) Loader() *ClassLoader {
+	return self.loader
+}

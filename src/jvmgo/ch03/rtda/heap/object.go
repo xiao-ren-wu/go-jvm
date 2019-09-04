@@ -2,16 +2,16 @@ package heap
 
 type Object struct {
 	class  *Class
-	fields Slots
+	data interface{}
 }
 func newObject(class *Class) *Object {
 	return &Object{
 		class:  class,
-		fields: newSlots(class.instanceSlotCount),
+		data: newSlots(class.instanceSlotCount),
 	}
 }
 func (self *Object) Fields() Slots {
-	return self.fields
+	return self.data.(Slots)
 }
 
 func (self *Object) IsInstanceOf(class *Class) bool {

@@ -2,6 +2,7 @@ package heap
 
 import (
 	"fmt"
+	"go/ast"
 	"jvmgo/ch03/classfile"
 	"jvmgo/ch03/classpath"
 )
@@ -29,13 +30,16 @@ func (self *ClassLoader) LoadClass(name string) *Class {
 	if class, ok := self.classMap[name]; ok {
 		return class
 	}
+	if name[0] == '[' {
+		return self.loadArrayClass(name)
+	}
 	return self.loadNonArrayClass(name)
 }
 func (self *ClassLoader) loadNonArrayClass(name string) *Class {
 	data, entry := self.readClass(name)
 	class := self.defineClass(data)
 	link(class)
-	if self.verboseFlag{
+	if self.verboseFlag {
 		fmt.Println("[Loaded %s from %s]", name, entry)
 	}
 	return class
@@ -53,6 +57,24 @@ func (self *ClassLoader) defineClass(data []byte) *Class {
 	resolveSuperClass(class)
 	resolveInterfaces(class)
 	self.classMap[class.name] = class
+	return class
+}
+/**
+加载数组
+ */
+func (self *ClassLoader) loadArrayClass(name string) *Class {
+	class := &Class{
+		AccessFlags: ACC_PUBLIC, //todo
+		name:        name,
+		loader:      self,
+		initStarted: true,
+		superClass:  self.LoadClass("java/lang/Object"),
+		interfaces: []*Class{
+			self.LoadClass("java/lang/Cloneable"),
+			self.LoadClass("java/io/Serializable"),
+		},
+	}
+	self.classMap[name] = class
 	return class
 }
 func parseClass(data []byte) *Class {
