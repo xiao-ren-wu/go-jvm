@@ -83,6 +83,23 @@ func (self *Class) GetClinitMethod() *Method {
 func (self *Class) SuperClass() *Class {
 	return self.superClass
 }
+
 func (self *Class) Loader() *ClassLoader {
 	return self.loader
+}
+func (self *Class) ArrayClass() *Class {
+	arrayClassName:=getArrayClassName(self.name)
+	return self.loader.LoadClass(arrayClassName)
+}
+func getArrayClassName(className string) string {
+	return "["+toDescriptor(className)
+}
+func toDescriptor(className string) string {
+	if className[0]=='['{
+		return className
+	}
+	if d,ok:=primitiveTypes[className];ok{
+		return d
+	}
+	return "L"+className+";"
 }

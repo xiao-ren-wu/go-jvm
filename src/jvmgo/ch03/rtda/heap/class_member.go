@@ -34,6 +34,6 @@ func (self *ClassMember) isAccessibleTo(d *Class) bool {
 	}
 	return d == c
 }
-func (self *ClassMember)Name() string  {
+func (self *ClassMember)Name() string {
 	return self.name
 }

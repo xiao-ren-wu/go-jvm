@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b83811ba-daea-42cf-b124-507328694fbf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/ArrayDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/references/newarray.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/array_class.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/array_object.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/loads/xaload.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/references/anewarray.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/references/arraylength.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/stores/xastore.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_name_helper.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/array_object.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/array_object.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_loader.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_loader.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/object.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/object.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_member.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_member.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,18 +57,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\go-jvm\src\jvmgo\ch03\instructions\stores" />
+      <recent name="H:\go-jvm\src\jvmgo\ch03\java\lang" />
+      <recent name="H:\go-jvm\src\jvmgo\ch03\rtda\heap" />
+      <recent name="H:\go-jvm\src\jvmgo\ch03\instructions" />
+      <recent name="H:\go-jvm\src\jvmgo\ch03\instructions\conversions" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="H:\go-jvm\src\jvmgo\ch03" />
       <recent name="H:\go-jvm\src\jvmgo\ch03\instructions" />
       <recent name="H:\go-jvm\src\jvmgo\ch03\instructions\math" />
       <recent name="H:\go-jvm\src\jvmgo\ch03\classfile" />
       <recent name="H:\go-jvm\src\jvmgo" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="H:\go-jvm\src\jvmgo\ch03\java\lang" />
-      <recent name="H:\go-jvm\src\jvmgo\ch03\rtda\heap" />
-      <recent name="H:\go-jvm\src\jvmgo\ch03\instructions" />
-      <recent name="H:\go-jvm\src\jvmgo\ch03\instructions\conversions" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -176,6 +178,8 @@
       <workItem from="1566947480860" duration="4955000" />
       <workItem from="1567034256030" duration="94000" />
       <workItem from="1567552585130" duration="3904000" />
+      <workItem from="1567639021052" duration="142000" />
+      <workItem from="1567639186328" duration="4489000" />
     </task>
     <servers />
   </component>

@@ -2,7 +2,6 @@ package heap
 
 import (
 	"fmt"
-	"go/ast"
 	"jvmgo/ch03/classfile"
 	"jvmgo/ch03/classpath"
 )
