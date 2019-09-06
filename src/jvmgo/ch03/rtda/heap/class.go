@@ -91,6 +91,12 @@ func (self *Class) ArrayClass() *Class {
 	arrayClassName:=getArrayClassName(self.name)
 	return self.loader.LoadClass(arrayClassName)
 }
+
+func (self *Class) ComponentClass() *Class {
+	componentClassName:=getComponentClassName(self.name)
+	return self.loader.LoadClass(componentClassName)
+}
+
 func getArrayClassName(className string) string {
 	return "["+toDescriptor(className)
 }
