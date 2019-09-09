@@ -3,6 +3,7 @@ package constants
 import (
 	"jvmgo/ch03/instructions/base"
 	"jvmgo/ch03/rtda"
+	"jvmgo/ch03/rtda/heap"
 )
 
 /*
@@ -32,6 +33,7 @@ func (self *LDC_w) Execute(frame *rtda.Frame) {
 func _ldc(frame *rtda.Frame, index uint) {
 	stack := frame.OperandStack()
 	cp := frame.Method().Class().ConstantPool()
+	class := frame.Method().Class()
 	c := cp.GetConstant(index)
 
 	switch c.(type) {
@@ -39,16 +41,17 @@ func _ldc(frame *rtda.Frame, index uint) {
 		stack.PushInt(c.(int32))
 	case float32:
 		stack.PushFloat(c.(float32))
-	//todo string
-	//todo *heap.ClassRef
+	case string:
+		internedStr := heap.JString(class.Loader(), c.(string))
+		stack.PushRef(internedStr)
 	default:
 		panic("todo ldc")
 	}
 }
 func (self *LDC2_w) Execute(frame *rtda.Frame) {
-	stack:=frame.OperandStack()
-	cp:=frame.Method().Class().ConstantPool()
-	c:=cp.GetConstant(self.Index)
+	stack := frame.OperandStack()
+	cp := frame.Method().Class().ConstantPool()
+	c := cp.GetConstant(self.Index)
 
 	switch c.(type) {
 	case int64:

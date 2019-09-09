@@ -58,9 +58,10 @@ func (self *ClassLoader) defineClass(data []byte) *Class {
 	self.classMap[class.name] = class
 	return class
 }
+
 /**
 加载数组
- */
+*/
 func (self *ClassLoader) loadArrayClass(name string) *Class {
 	class := &Class{
 		AccessFlags: ACC_PUBLIC, //todo
@@ -168,7 +169,9 @@ func initStaticFinalVar(class *Class, field *Field) {
 			val := cp.GetConstant(cpIndex).(float64)
 			vars.SetDouble(slotId, val)
 		case "Ljava/lang/String":
-			panic("todo")
+			goStr := cp.GetConstant(cpIndex).(string)
+			jStr := JString(class.Loader(), goStr)
+			vars.SetRef(slotId, jStr)
 		}
 	}
 }

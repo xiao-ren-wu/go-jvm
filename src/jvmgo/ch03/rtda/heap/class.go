@@ -88,24 +88,38 @@ func (self *Class) Loader() *ClassLoader {
 	return self.loader
 }
 func (self *Class) ArrayClass() *Class {
-	arrayClassName:=getArrayClassName(self.name)
+	arrayClassName := getArrayClassName(self.name)
 	return self.loader.LoadClass(arrayClassName)
 }
 
 func (self *Class) ComponentClass() *Class {
-	componentClassName:=getComponentClassName(self.name)
+	componentClassName := getComponentClassName(self.name)
 	return self.loader.LoadClass(componentClassName)
 }
 
+/**
+根据字段名和描述符查找字段
+*/
+func (self *Class) getField(name, descriptor string, isStatic bool) *Field {
+	for c := self; c != nil; c = c.superClass {
+		for _, field := range self.fields {
+			if field.IsStatic() == isStatic && field.name == name && field.descriptor == descriptor {
+				return field
+			}
+		}
+	}
+	return nil
+}
+
 func getArrayClassName(className string) string {
-	return "["+toDescriptor(className)
+	return "[" + toDescriptor(className)
 }
 func toDescriptor(className string) string {
-	if className[0]=='['{
+	if className[0] == '[' {
 		return className
 	}
-	if d,ok:=primitiveTypes[className];ok{
+	if d, ok := primitiveTypes[className]; ok {
 		return d
 	}
-	return "L"+className+";"
+	return "L" + className + ";"
 }
