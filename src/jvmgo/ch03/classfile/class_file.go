@@ -1,6 +1,7 @@
 package classfile
 
 import "fmt"
+
 /*
 ClassFile {
     u4             magic;

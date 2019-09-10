@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b83811ba-daea-42cf-b124-507328694fbf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/native/registry.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/string_pool.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/reserved/INVOKE_NATIVE.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/constants/ldc.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/instructions/constants/ldc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/classfile/class_file.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/classfile/class_file.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/native/registry.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/native/registry.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_loader.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/class_loader.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/method.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/method.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/object.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmgo/ch03/rtda/heap/object.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -179,6 +180,7 @@
       <workItem from="1567639186328" duration="4489000" />
       <workItem from="1567725148175" duration="4567000" />
       <workItem from="1567986392759" duration="2736000" />
+      <workItem from="1568071064608" duration="4531000" />
     </task>
     <servers />
   </component>

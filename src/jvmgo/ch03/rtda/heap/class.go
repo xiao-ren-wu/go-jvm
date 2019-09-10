@@ -22,7 +22,8 @@ type Class struct {
 	instanceSlotCount uint
 	staticSlotCount   uint
 	staticVars        Slots
-	initStarted       bool //class init flag
+	initStarted       bool    //class init flag
+	jClass            *Object // java.lang.Class实例
 }
 
 func newClass(cf *ClassFile) *Class {
@@ -82,6 +83,10 @@ func (self *Class) GetClinitMethod() *Method {
 }
 func (self *Class) SuperClass() *Class {
 	return self.superClass
+}
+
+func (self *Class) JClass() *Object {
+	return self.jClass
 }
 
 func (self *Class) Loader() *ClassLoader {

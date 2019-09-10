@@ -19,20 +19,30 @@ type ClassLoader struct {
 }
 
 func NewClassLoader(cp *classpath.Classpath, verboseFlag bool) *ClassLoader {
-	return &ClassLoader{
+	loader := &ClassLoader{
 		cp:          cp,
 		verboseFlag: verboseFlag,
 		classMap:    make(map[string]*Class),
 	}
+	loader.loadBasicClasses()
+	loader.loadPrimitiveClasses()
+	return loader
 }
 func (self *ClassLoader) LoadClass(name string) *Class {
 	if class, ok := self.classMap[name]; ok {
-		return class
+		return class //already loaded
 	}
-	if name[0] == '[' {
-		return self.loadArrayClass(name)
+	var class *Class
+	if name[0] == '[' { //arrayClass
+		class = self.loadArrayClass(name)
+	} else {
+		class = self.loadNonArrayClass(name)
 	}
-	return self.loadNonArrayClass(name)
+	if j1ClassClass, ok := self.classMap["java/lang/Class"]; ok {
+		class.jClass = j1ClassClass.NewObject()
+		class.jClass.extra = class
+	}
+	return class
 }
 func (self *ClassLoader) loadNonArrayClass(name string) *Class {
 	data, entry := self.readClass(name)
@@ -77,6 +87,39 @@ func (self *ClassLoader) loadArrayClass(name string) *Class {
 	self.classMap[name] = class
 	return class
 }
+
+/*
+loadBasicClasses()函数先加载java.lang.Class类
+这又会触发java.lang.Object等类和接口的加载，然后遍历classMap
+给已经加载的每一个类关联类对象
+*/
+func (self *ClassLoader) loadBasicClasses() {
+	J1ClassClass := self.LoadClass("java/lang/Class")
+	for _, class := range self.classMap {
+		if class.jClass == nil {
+			class.jClass = J1ClassClass.NewObject()
+			class.jClass.extra = class
+		}
+	}
+}
+
+func (self *ClassLoader) loadPrimitiveClasses() {
+	for primitiveType, _ := range primitiveTypes {
+		self.loadPrimitiveClass(primitiveType)
+	}
+}
+func (self *ClassLoader) loadPrimitiveClass(className string) {
+	class := &Class{
+		AccessFlags: AccessFlags{ACC_PUBLIC},
+		name:        className,
+		loader:      self,
+		initStarted: true,
+	}
+	class.jClass = self.classMap["java/lang/Class"].NewObject()
+	class.jClass.extra = class
+	self.classMap[className] = class
+}
+//todo ...
 func parseClass(data []byte) *Class {
 	cf, err := classfile.Parse(data)
 	if err != nil {
