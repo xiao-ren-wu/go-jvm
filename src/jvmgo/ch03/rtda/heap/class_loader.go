@@ -105,9 +105,18 @@ func (self *ClassLoader) loadBasicClasses() {
 
 func (self *ClassLoader) loadPrimitiveClasses() {
 	for primitiveType, _ := range primitiveTypes {
-		self.loadPrimitiveClass(primitiveType)
+		self.loadPrimitiveClass(primitiveType) //primitiveType 是void，int，float
 	}
 }
+/**
+生成void和基本类型类
+1. void和基本类型的类名就是void，int，float等。
+2. 基本类型的类没有超类，也没有实现任何接口
+3. 非基本类型的类对象是通过IDC指令加载到操作数栈中的，而基本类型的类对象
+虽然在Java代码中看起来是通过字面量获取的，但是在编译之后的指令不是IDC，而是getstatic
+每个基本类型都有一个包装类，包装类中有一个静态常量，叫做TYPE，其中存放的就是基本类型的类
+
+ */
 func (self *ClassLoader) loadPrimitiveClass(className string) {
 	class := &Class{
 		AccessFlags: AccessFlags{ACC_PUBLIC},

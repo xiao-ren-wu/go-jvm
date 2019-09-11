@@ -49,3 +49,6 @@ func (self *Object) ArrayLength() int32 {
 		panic("Not array!")
 	}
 }
+func ArrayCopy(src *Object, srcPos, dstPos, length int32) {
+	//todo ...
+}

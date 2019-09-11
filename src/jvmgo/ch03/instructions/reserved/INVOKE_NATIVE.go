@@ -4,6 +4,7 @@ import (
 	"jvmgo/ch03/instructions/base"
 	"jvmgo/ch03/native"
 	"jvmgo/ch03/rtda"
+	_ "jvmgo/ch03/native/java/lang"
 )
 
 type INVOKE_NATIVE struct {
