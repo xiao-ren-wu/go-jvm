@@ -17,17 +17,17 @@ ldc和ldc_w指令区别仅在于操作数的宽度
 type LDC struct {
 	base.Index8Instruction
 }
-type LDC_w struct {
+type LDC_W struct {
 	base.Index16Instruction
 }
-type LDC2_w struct {
+type LDC2_W struct {
 	base.Index16Instruction
 }
 
 func (self *LDC) Execute(frame *rtda.Frame) {
 	_ldc(frame, self.Index)
 }
-func (self *LDC_w) Execute(frame *rtda.Frame) {
+func (self *LDC_W) Execute(frame *rtda.Frame) {
 	_ldc(frame, self.Index)
 }
 func _ldc(frame *rtda.Frame, index uint) {
@@ -52,7 +52,7 @@ func _ldc(frame *rtda.Frame, index uint) {
 		panic("todo ldc")
 	}
 }
-func (self *LDC2_w) Execute(frame *rtda.Frame) {
+func (self *LDC2_W) Execute(frame *rtda.Frame) {
 	stack := frame.OperandStack()
 	cp := frame.Method().Class().ConstantPool()
 	c := cp.GetConstant(self.Index)

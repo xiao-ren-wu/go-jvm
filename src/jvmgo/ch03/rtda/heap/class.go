@@ -135,3 +135,6 @@ func (self *Class) IsPrimitive() bool {
 	_, ok := primitiveTypes[self.name]
 	return ok
 }
+func (self *Class) GetInstanceField(name, descriptor string) *Field {
+	return self.getField(name, descriptor, false)
+}

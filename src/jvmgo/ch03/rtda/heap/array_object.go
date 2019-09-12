@@ -49,6 +49,17 @@ func (self *Object) ArrayLength() int32 {
 		panic("Not array!")
 	}
 }
-func ArrayCopy(src *Object, srcPos, dstPos, length int32) {
-	//todo ...
+func ArrayCopy(src, dst *Object, srcPos, dstPos, length int32) {
+	switch src.data.(type) {
+	case []int32:
+		_src := src.data.([]int32)[srcPos : srcPos+length]
+		_dst := dst.data.([]int32)[dstPos : dstPos+length]
+		copy(_dst, _src)
+	case []*Object:
+		_src := src.data.([]*Object)[srcPos : srcPos+length]
+		_dst := dst.data.([]*Object)[dstPos : dstPos+length]
+		copy(_dst, _src)
+		//todo others ...
+
+	}
 }
